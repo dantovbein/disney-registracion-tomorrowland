@@ -1,0 +1,17 @@
+body {
+	font-size: 16px;
+}
+
+#main {
+	width: 100%;
+	display:inline-block;
+}
+
+.view {
+	width: 96%;
+	height: 100%;
+	padding: 2.5rem 2% 0 2%;
+	background-color: yellow;
+	display: inline-block;
+	position: relative;
+}

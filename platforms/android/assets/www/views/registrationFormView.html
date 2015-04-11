@@ -1,0 +1,53 @@
+<section id="registration-form-view" class="view">
+	<form class="registration-form">
+		<ul class="registration-form-list">
+			<li class="registration-form-item">
+				<label>Nombre:</label>
+				<input id="input-registration-form-name" type="text" placeholder="" />
+			</li>
+			<li class="registration-form-item">
+				<label>Apellido:</label>
+				<input id="input-registration-form-last-name" type="text" placeholder="" />
+			</li>
+			<li class="registration-form-item">
+				<label>Fecha de nacimiento:</label>
+				<input id="input-registration-form-birth" type="date" placeholder="" />
+			</li>
+			<li class="registration-form-item">
+				<label>Sexo:</label>
+				<form id="gender-form">
+					<ul class="gender-list">
+						<!--<li class="gender-item">
+							<label>Masculino</label>
+							<input type="radio" name="sex" value="male">
+						</li>
+						<li class="gender-item">
+							<label>Femenino</label>
+							<input type="radio" name="sex" value="female">
+						</li>-->
+					</ul>
+				</form>
+			</li>
+		</ul>
+		<div class="wrapper-confirm-data">
+			<span>Deseo recibir novedades de Disney:</span>
+			<div class="wrapper-checkbox disney-news-checkbox"></div>
+		</div>
+		<div class="wrapper-confirm-data">
+			<span>Acepto bases y condiciones:<div class="btn btn-legals">Ver bases y condiciones</div></span>
+			<div class="wrapper-checkbox legals-checkbox"></div>
+		</div>
+	</form>
+	<nav class="form-nav">
+		<ul class="form-nav-list">
+			<li class="form-nav-item">
+				<div class="btn brn-cancel">
+					<span>CANCELAR</span>
+				</div>
+				<div class="btn brn-cancel">
+					<span>ACEPTAR</span>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</section>
