@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'dfutheavy';
+    src: url('../fonts/dfuthvy1-webfont.eot');
+    src: url('../fonts/dfuthvy1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dfuthvy1-webfont.woff2') format('woff2'),
+         url('../fonts/dfuthvy1-webfont.woff') format('woff'),
+         url('../fonts/dfuthvy1-webfont.ttf') format('truetype'),
+         url('../fonts/dfuthvy1-webfont.svg#dfutheavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'dfutmedium';
+    src: url('../fonts/dfutmed1-webfont.eot');
+    src: url('../fonts/dfutmed1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dfutmed1-webfont.woff2') format('woff2'),
+         url('../fonts/dfutmed1-webfont.woff') format('woff'),
+         url('../fonts/dfutmed1-webfont.ttf') format('truetype'),
+         url('../fonts/dfutmed1-webfont.svg#dfutmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'dfutsuper';
+    src: url('../fonts/dfutsup1-webfont.eot');
+    src: url('../fonts/dfutsup1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dfutsup1-webfont.woff2') format('woff2'),
+         url('../fonts/dfutsup1-webfont.woff') format('woff'),
+         url('../fonts/dfutsup1-webfont.ttf') format('truetype'),
+         url('../fonts/dfutsup1-webfont.svg#dfutsuper') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'dphelmedium';
+    src: url('../fonts/dphelmed1-webfont.eot');
+    src: url('../fonts/dphelmed1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dphelmed1-webfont.woff2') format('woff2'),
+         url('../fonts/dphelmed1-webfont.woff') format('woff'),
+         url('../fonts/dphelmed1-webfont.ttf') format('truetype'),
+         url('../fonts/dphelmed1-webfont.svg#dphelmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

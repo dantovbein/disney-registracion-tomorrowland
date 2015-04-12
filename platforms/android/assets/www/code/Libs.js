@@ -19,11 +19,14 @@ Libs.prototype.getFiles = function(_lib_) {
 			"libs"	: [
 				"css/checkbox.css",
 				"css/waitView.css",
+				"css/appMenu.css",
 				"css/registrationFormView.css",
 				"css/confirmationFormView.css",
+				"css/legalsView.css",
 				"code/monkeyman/core/oop.js",
 				"code/monkeyman/core/Snippet.js",
 				"code/monkeyman/core/Monkeyman.js",
+				"code/monkeyman/core/MonkeymanGlobals.js",
 				"code/Utils.js",
 				"code/Globals.js",
 				"code/App.js",
@@ -31,8 +34,13 @@ Libs.prototype.getFiles = function(_lib_) {
 				"code/monkeyman/core/widgets/GenericCheckbox.js",
 				"code/monkeyman/core/snippets/GenericSnippet.js",
 				"code/monkeyman/core/views/GenericView.js",
+				"code/snippets/ItemCheckboxList.js",
+				"code/snippets/CheckboxList.js",
+				"code/snippets/GenderList.js",
+				"code/views/AppMenu.js",
 				"code/views/RegistrationFormView.js",
-				"code/views/ConfirmationFormView.js"
+				"code/views/ConfirmationFormView.js",
+				"code/views/LegalsView.js"
 			]
 		}
 	);

@@ -1,54 +1,46 @@
 var Utils = {
 	appName : "Registracion Disney",
 	appVersion : "1.0.0",
-	setMainInstance : function(instance) {
+	setMain : function(instance) {
 		this.mainInstance = instance;
 	},
-	getMainInstance : function() {
+	getMain : function() {
 		return this.mainInstance;
 	},
 	getServices : function(){
 		var url = "";
 		return {}
 	},
-	setUserData : function(data) {
-		/*localStorage.setItem("id_vendor", data[0].idVendor);
-		localStorage.setItem("id_device", data[0].idDevice);
-		localStorage.setItem("user", data[0].user);
-		localStorage.setItem("password", data[0].password);
-		localStorage.setItem("full_name", data[0].fullName);
-		localStorage.setItem("unlock_app_code", data[0].unlockAppCode);
-		localStorage.setItem("unlock_code", data[0].unlockCode);
-		localStorage.setItem("connected_since", new Date());
-		localStorage.setItem("expiration", this.getExpirationDate());
-		localStorage.setItem("is_locked", 0);
-		localStorage.setItem("is_temporary_locked", 0);
-		localStorage.setItem("changed_time", 0);*/
-	},
-	getUserData : function() {
-		return { 
-			/*idVendor : localStorage.getItem("id_vendor") ,
-			idDevice : localStorage.getItem("id_device") ,
-			user : localStorage.getItem("user") ,
-			password : localStorage.getItem("password") ,
-			fullName : localStorage.getItem("full_name") ,
-			code : localStorage.getItem("code") ,
-			connectedSince : localStorage.getItem("connected_since") ,
-			expiration : localStorage.getItem("expiration"),
-			isLocked : localStorage.getItem("is_locked")*/
-		}
-	},
 	showMessage : function(text) {
-		$("body").append("<div class='app-message'><span class='app-message-desc'>" + text + "</span></div>");
-		$(".app-message").width($(document).width());
-		$(".app-message").height($(document).height());
+		this.getOverlay();
+		$("body").append("<div class='app-message'><span class='message-desc'>" + text + "</span></div>");
+		setTimeout(function(e){
+			$(".app-message").animate({
+				"opacity":0
+			},250,function(){
+				$(this).remove();
+			});
+			e.context.removeOverlay();
+		},2000,{ context:this });
+	},
+	showErrorMessage : function(text) {
+		this.getOverlay();
+		$("body").append("<div class='error-message'><span class='message-desc'>" + text + "</span></div>");
+		setTimeout(function(e){
+			$(".error-message").animate({
+				"opacity":0
+			},250,function(){
+				$(this).remove();
+			});
+			e.context.removeOverlay();
+		},1000,{ context:this });
 	},
 	removeMessage : function(){
 		if($(".app-message").length > 0) $(".app-message").remove();
 	},
 	removeUserData : function() {
-		if(this.getMainInstance().usersDataBase) {
-			this.getMainInstance().usersDataBase.drop();
+		if(this.getMain().usersDataBase) {
+			this.getMain().usersDataBase.drop();
 			localStorage.clear();
 		}
 	},
@@ -72,7 +64,10 @@ var Utils = {
 	},
 	getOverlay : function() {
 		$("body").append("<div class='overlay'></div>");
-		$(".overlay").css( { height : $(window).height() } );
+		$(".overlay").css( { 
+								width : $(window).width(),
+								height : $(window).height() 
+							});
 	},
 	removeOverlay : function() {
 		if($(".overlay").length > 0) $(".overlay").remove();

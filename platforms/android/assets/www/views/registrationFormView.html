@@ -1,31 +1,23 @@
 <section id="registration-form-view" class="view">
+	<header></header>
 	<form class="registration-form">
 		<ul class="registration-form-list">
 			<li class="registration-form-item">
-				<label>Nombre:</label>
-				<input id="input-registration-form-name" type="text" placeholder="" />
+				<label class="registration-form-item-label">Nombre:</label>
+				<input id="input-registration-form-name" class="registration-form-item-input" type="text" placeholder="" />
 			</li>
 			<li class="registration-form-item">
-				<label>Apellido:</label>
-				<input id="input-registration-form-last-name" type="text" placeholder="" />
+				<label class="registration-form-item-label">Apellido:</label>
+				<input id="input-registration-form-last-name" class="registration-form-item-input" type="text" placeholder="" />
 			</li>
 			<li class="registration-form-item">
-				<label>Fecha de nacimiento:</label>
-				<input id="input-registration-form-birth" type="date" placeholder="" />
+				<label class="registration-form-item-label" >Fecha de nacimiento:</label>
+				<input id="input-registration-form-birth-date" class="registration-form-item-input" type="date" placeholder="" />
 			</li>
 			<li class="registration-form-item">
-				<label>Sexo:</label>
+				<label class="registration-form-item-label" >Sexo:</label>
 				<form id="gender-form">
-					<ul class="gender-list">
-						<!--<li class="gender-item">
-							<label>Masculino</label>
-							<input type="radio" name="sex" value="male">
-						</li>
-						<li class="gender-item">
-							<label>Femenino</label>
-							<input type="radio" name="sex" value="female">
-						</li>-->
-					</ul>
+					<ul class="gender-list"></ul>
 				</form>
 			</li>
 		</ul>
@@ -41,11 +33,13 @@
 	<nav class="form-nav">
 		<ul class="form-nav-list">
 			<li class="form-nav-item">
-				<div class="btn brn-cancel">
+				<div class="btn btn-cancel">
 					<span>CANCELAR</span>
 				</div>
-				<div class="btn brn-cancel">
-					<span>ACEPTAR</span>
+			</li>
+			<li class="form-nav-item">
+				<div class="btn btn-save">
+					<span>GUARDAR</span>
 				</div>
 			</li>
 		</ul>

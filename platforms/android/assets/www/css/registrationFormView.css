@@ -1,4 +1,83 @@
+#registration-form-view {
+	font-size: 2rem;
+}
+#registration-form-view header {
+
+}
 .view-form { }
 .view-form .registration-form {
 	width: 100%;	
+}
+
+.registration-form .registration-form-list {
+
+}
+
+.registration-form .registration-form-list .registration-form-item{
+	width: 100%;
+	margin: 0 0 1rem 0;
+}
+
+.registration-form .registration-form-list .registration-form-item .registration-form-item-label {
+	display: inline-block;
+	width: 38%;
+}
+
+.registration-form .registration-form-list .registration-form-item  .registration-form-item-input {
+	width: 59%;
+	padding: 1rem 0 1rem 1%;
+	font-size: 1.5rem;
+}
+
+.view-form .registration-form .gender-list {
+	display: inline-block;
+	width: 100%;
+}
+
+.item-checkbox-list {
+	display: inline-block;
+	float: left;
+	margin: 0 1rem 0 0;
+}
+
+.item-checkbox-list label {
+	float: left;
+}
+
+.item-checkbox-list .wrapper-checkbox {
+	float: left;
+}
+
+.wrapper-confirm-data {
+	width: 100%;
+	float: left;
+}
+
+.wrapper-confirm-data span {
+	float: left;
+}
+
+.wrapper-confirm-data .wrapper-checkbox {
+	float: left;
+}
+
+.form-nav {
+	width: 100%;
+	text-align: center;
+	float: left;
+	display: inline-block;
+}
+
+.form-nav .form-nav-list{
+	display: inline-block;
+}
+
+.form-nav .form-nav-list .form-nav-item {
+	float: left;
+	display: inline-block;
+	margin: 0 2rem 0 0;
+}
+
+.form-nav .form-nav-list .form-nav-item:last-child {
+	margin-right:0;
 }

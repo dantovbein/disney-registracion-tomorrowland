@@ -7,11 +7,11 @@ function App(config) {
 App.prototype.contstructor = App;
 
 App.prototype.initializeParameters = function() {	
+	Utils.setMain(this);
 	this.createDataBase();
 }
 
 App.prototype.initialize = function() {
-	//this.getView({ view:Globals.WAIT_VIEW });
 	this.getView({ view:Globals.REGISTRATION_FORM_VIEW });
 }
 
@@ -30,9 +30,6 @@ App.prototype.getView = function(data) {
 	this.currentView = data.view;
 	Utils.removeContent();
 	switch(this.currentView){
-		case Globals.WAIT_VIEW:
-			this.view = new WaitView({ container:$("#main") });
-			break;
 		case Globals.REGISTRATION_FORM_VIEW:
 			this.view = new RegistrationFormView({ container:$("#main") });
 			break;
@@ -40,6 +37,12 @@ App.prototype.getView = function(data) {
 			this.view = new ConfirmationFormView({ container:$("#main") });
 			break;
 	}
+	$(this.view).bind( MonkeymanGlobals.GO_TO_NEXT_VIEW, { context:this } ,this.onNextView,false );
+}
+
+App.prototype.onNextView = function(e){
+	e.stopImmediatePropagation();
+	e.data.context.getView({ view:e.view });
 }
 
 /*
