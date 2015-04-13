@@ -12,6 +12,7 @@ App.prototype.initializeParameters = function() {
 }
 
 App.prototype.initialize = function() {
+	this.getAppMenu();
 	this.getView({ view:Globals.REGISTRATION_FORM_VIEW });
 }
 
@@ -26,15 +27,19 @@ App.prototype.createDataBase = function() {
 	}
 }
 
+App.prototype.getAppMenu = function(){
+	var appMenu = new AppMenu({ container:$("body") });
+}
+
 App.prototype.getView = function(data) {
 	this.currentView = data.view;
 	Utils.removeContent();
 	switch(this.currentView){
 		case Globals.REGISTRATION_FORM_VIEW:
-			this.view = new RegistrationFormView({ container:$("#main") });
+			this.view = new RegistrationFormView({ container:$("#wrapper-view") });
 			break;
 		case Globals.CONFIRMATION_FORM_VIEW:
-			this.view = new ConfirmationFormView({ container:$("#main") });
+			this.view = new ConfirmationFormView({ container:$("#wrapper-view") });
 			break;
 	}
 	$(this.view).bind( MonkeymanGlobals.GO_TO_NEXT_VIEW, { context:this } ,this.onNextView,false );

@@ -73,6 +73,6 @@ var Utils = {
 		if($(".overlay").length > 0) $(".overlay").remove();
 	},
 	removeContent : function() {
-		$("#main").empty();
+		$("#wrapper-view").empty();
 	}
 }

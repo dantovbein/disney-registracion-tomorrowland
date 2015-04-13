@@ -50,7 +50,7 @@ RegistrationFormView.prototype.showLegals = function(e){
 }
 
 RegistrationFormView.prototype.getStatusLegals = function(value){
-	debugger;
+	this.legalsCheckbox.setState(value);
 }
 
 RegistrationFormView.prototype.addGenderList = function(){
@@ -110,12 +110,33 @@ RegistrationFormView.prototype.saveData = function(data) {
 													"USER_CONFIRM_LEGALS" : data.confirmLegals
 												});
 	Utils.getMain().usersDataBase.commit();
-	this.reset();
-	Utils.showMessage("La informacion se guardo correctamente");
+	this.reset();	
+
+	$.ajax({
+		context : this,
+		async : false,
+		url : "service/overwriteUserFile.php",
+		type : "POST",
+		data : {  	
+			"USER_NAME" : data.name,
+			"USER_LAST_NAME" : data.lastName,
+			"USER_BIRTH_DATE" : data.birhDate,
+			"USER_GENDER" : data.gender,
+			"USER_CONNECTED_DISNEY" : data.confirmDisneyNews,
+			"USER_CONFIRM_LEGALS" : data.confirmLegals
+		},
+		success : function(r){
+			Utils.showMessage("La informacion se guardo correctamente");
+			setTimeout(function(e){
+				$(e.context).trigger({ type:MonkeymanGlobals.GO_TO_NEXT_VIEW,view:Globals.CONFIRMATION_FORM_VIEW });
+			},2600,{ context:this });
+		},
+		error : function(error) {
+			debugger;
+		}
+	});
 	
-	setTimeout(function(e){
-		$(e.context).trigger({ type:MonkeymanGlobals.GO_TO_NEXT_VIEW,view:Globals.CONFIRMATION_FORM_VIEW });
-	},2600,{ context:this });
+	
 }
 
 
