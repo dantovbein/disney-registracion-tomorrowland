@@ -4,49 +4,117 @@
 #registration-form-view header {
 
 }
-.view-form { }
-.view-form .registration-form {
-	width: 100%;	
+
+.registration-form {
+	/*width: 100%;*/
+	width:83%;	
+	margin-bottom: 1.3rem;
+	display: inline-block;
 }
 
 .registration-form .registration-form-list {
-
-}
-
-.registration-form .registration-form-list .registration-form-item{
 	width: 100%;
-	margin: 0 0 1rem 0;
-}
-
-.registration-form .registration-form-list .registration-form-item .registration-form-item-label {
+	float: left;
 	display: inline-block;
-	width: 38%;
 }
 
-.registration-form .registration-form-list .registration-form-item  .registration-form-item-input {
-	width: 59%;
-	padding: 1rem 0 1rem 1%;
+.registration-form .registration-form-list .registration-form-item {
+	width: 47%;
+	margin: 0 0 1rem 0;
+	float: left;
+}
+
+.registration-form .registration-form-list .registration-form-item.wide {
+	width: 100%;
+	margin-bottom: 0.6;
+}
+
+.registration-form .registration-form-list .registration-form-item:nth-child(odd){
+	padding-right: 3%;
+}
+
+.registration-form .registration-form-list .registration-form-item:nth-child(even){
+	padding-left: 3%;
+}
+
+.registration-form .registration-form-list .registration-form-item.wide:nth-child(odd),
+.registration-form .registration-form-list .registration-form-item.wide:nth-child(even) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.registration-form .registration-form-list .registration-form-item label {
+	display: inline-block;
+	width: 100%;
+	font-size: 1.2rem;
+	font-family: "dfutsuper";
+	padding: 0 0 .8rem 0;
+	text-align: left;
+	letter-spacing: .1rem;
+}
+
+.registration-form .registration-form-list .registration-form-item.wide label {
+	padding-top: .2rem;
+}
+
+.registration-form .registration-form-list .registration-form-item input {
+	width: 98%;
+	height: 1rem;
+	padding: .9rem 0 .9rem 2%;
 	font-size: 1.5rem;
 }
 
-.view-form .registration-form .gender-list {
+.registration-form .registration-form-list .registration-form-item .item-checkbox-list {
 	display: inline-block;
+	float: left;
+	/*margin: 0 1rem 0 0;*/
 	width: 100%;
 }
 
-.item-checkbox-list {
+.registration-form .registration-form-list .registration-form-item .item-checkbox-list label {
+	float: left;
+	width: 94%;
+	font-family: "dfutmedium";
+}
+
+.registration-form .registration-form-list .registration-form-item .item-checkbox-list.item-checkbox-legals label {
+	width: 42%;
+}
+
+.registration-form .registration-form-list .registration-form-item .item-checkbox-list.item-checkbox-legals .btn-legals {
+	float: left;
+  	width: 28%;
+  	font-size: 1rem;
+  	background-color: #905b21;
+}
+
+.registration-form .registration-form-list .registration-form-item .item-checkbox-list .wrapper-checkbox {
+	float: left;
+	width: 4%;
+	margin: 0 2% 0 0;
+}
+
+/*
+.registration-form .registration-form-list .registration-form-item.item-checkbox label {
+	font-size: 1rem;
+}
+*/
+
+.registration-form .registration-form-list .registration-form-item .gender-list {
 	display: inline-block;
-	float: left;
-	margin: 0 1rem 0 0;
+	width: 100%;
+	padding-top: 1rem;
 }
 
-.item-checkbox-list label {
-	float: left;
+.registration-form .registration-form-list .registration-form-item .gender-list .item-checkbox-list {
+	width: 50%;
 }
 
-.item-checkbox-list .wrapper-checkbox {
-	float: left;
+.registration-form .registration-form-list .registration-form-item .gender-list .item-checkbox-list label {
+	width: 60%;
+	padding-top: .2rem;
 }
+
 
 .wrapper-confirm-data {
 	width: 100%;

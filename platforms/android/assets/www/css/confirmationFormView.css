@@ -1,0 +1,15 @@
+#confirmation-form-view {
+
+}
+
+#confirmation-form-view .btn-back {
+	height: 1.8rem;
+	width: 2rem;
+	position: absolute;
+	bottom: 3rem;
+	left: 2rem;
+}
+
+.confirmation-image {
+	margin-top: -3rem;
+}

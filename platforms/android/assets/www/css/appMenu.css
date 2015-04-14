@@ -1,15 +1,21 @@
 #app-menu {
-	width: 30rem;
+	width: 17.5rem;
 	height: 100%;
-	background-color: rgba(0,0,0,.95);
-	border-right: solid .3rem rgba(255,255,255,1);
+	background-color: rgba(144,91,33,.95);
 	position: absolute;
 	top: 0;
 	opacity: 0;
+	padding: 0 1rem;
 }
 
-#app-menu .btn-open ,#app-menu .btn-close {
+#app-menu .btn-close {
 	position: absolute;
-	right: -1rem;
+	right: 1rem;
 	top: 1rem;
+	background-color: transparent;
+	padding: 0;
+}
+
+#app-menu .app-menu-nav {
+	margin-top: 15rem;
 }

@@ -2,6 +2,7 @@ function App(config) {
 	this.config = config;
 	this.initializeParameters();
 	this.initialize();
+	this.addHandlers();
 } 
 
 App.prototype.contstructor = App;
@@ -13,9 +14,22 @@ App.prototype.initializeParameters = function() {
 
 App.prototype.initialize = function() {
 	this.getAppMenu();
+	$("#main header").css({
+		opacity:1
+	});
 	this.getView({ view:Globals.REGISTRATION_FORM_VIEW });
 }
 
+App.prototype.addHandlers = function(){
+	$("header .btn-settings").click({ context:this },this.showAppMenu );
+}
+
+App.prototype.showAppMenu = function(e){
+	var self = e.data.context;
+	if(self.appMenu){
+		self.appMenu.showMenu(true);
+	}
+}
 
 App.prototype.createDataBase = function() {
 	this.usersDataBase = new localStorageDB("usersDataBase", localStorage);
@@ -28,7 +42,7 @@ App.prototype.createDataBase = function() {
 }
 
 App.prototype.getAppMenu = function(){
-	var appMenu = new AppMenu({ container:$("body") });
+	this.appMenu = new AppMenu({ container:$("body") });
 }
 
 App.prototype.getView = function(data) {
@@ -36,9 +50,11 @@ App.prototype.getView = function(data) {
 	Utils.removeContent();
 	switch(this.currentView){
 		case Globals.REGISTRATION_FORM_VIEW:
+			$("header").css({ opacity:1 });
 			this.view = new RegistrationFormView({ container:$("#wrapper-view") });
 			break;
 		case Globals.CONFIRMATION_FORM_VIEW:
+			$("header").css({ opacity:0 });
 			this.view = new ConfirmationFormView({ container:$("#wrapper-view") });
 			break;
 	}

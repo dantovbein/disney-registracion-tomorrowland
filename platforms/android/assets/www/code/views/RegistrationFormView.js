@@ -59,6 +59,7 @@ RegistrationFormView.prototype.addGenderList = function(){
 
 RegistrationFormView.prototype.addDisneyCheckbox = function(){
 	this.disneyNewsCheckbox = new GenericCheckbox({ container:$(this.node).find(".disney-news-checkbox") , path:"widgets/checkbox.html" });
+	this.disneyNewsCheckbox.setState(1);
 }
 
 RegistrationFormView.prototype.addLegalsCheckbox = function(){
