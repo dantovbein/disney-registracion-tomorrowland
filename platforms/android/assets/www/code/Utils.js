@@ -1,6 +1,6 @@
 var Utils = {
 	appName : "Registracion Disney",
-	appVersion : "1.0.0",
+	appVersion : "1.0.7",
 	setMain : function(instance) {
 		this.mainInstance = instance;
 	},
