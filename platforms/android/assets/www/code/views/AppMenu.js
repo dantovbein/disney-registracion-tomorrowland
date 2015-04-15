@@ -52,13 +52,14 @@ AppMenu.prototype.showMenu = function(show){
 	if(show){
 		var lockView = new LockView({ container:$("body") });
 		$(lockView).bind(Globals.RESPONSE_LOCK_VIEW,{context:this},function(e){
-			debugger;
+			if(e.response==1){
+				e.data.context.updateData();
+				$(e.data.context.node).animate({
+					left:0,
+					opacity:1
+				},300);
+			}
 		});
-		/*this.updateData();
-		$(this.node).animate({
-			left:0,
-			opacity:1
-		},300);*/
 	}else{
 		$(this.node).animate({
 			left:-($(this.node).outerWidth()) + this.marginLeftAppMenu,
@@ -72,24 +73,32 @@ AppMenu.prototype.updateData = function(){
 }
 
 AppMenu.prototype.synchronizeUsers = function(e){
-	Utils.showMessageLoading("Sincronizando usuarios al servidor");
-	e.stopImmediatePropagation();
-	$.ajax({
-		context : e.data.context,
-		async : false,
-		url : "service/manager/synchronizeUsers.php",
-		type : "POST",
-		data : { users : JSON.stringify(Utils.getMain().usersDataBase.query("users")) },
-		success : function(r){
-			debugger;
-			setTimeout(function(){
-				Utils.removeMessage();
-			},1000);			
-		},
-		error : function(error) {
-			debugger;
-		}
-	});
+	if(Utils.getMain().usersDataBase.query("users").length==0){
+		Utils.showMessageLoading("No hay usuarios agregados");
+		setTimeout(function(){
+			Utils.removeMessage();
+		},1000);
+		return false;
+	}else{
+		Utils.showMessageLoading("Sincronizando usuarios al servidor");
+		e.stopImmediatePropagation();
+		$.ajax({
+			context : e.data.context,
+			async : false,
+			url : Utils.getServer() + "service/manager/synchronizeUsers.php",
+			type : "POST",
+			data : { users : JSON.stringify(Utils.getMain().usersDataBase.query("users")) },
+			success : function(r){
+				debugger;
+				setTimeout(function(){
+					Utils.removeMessage();
+				},1000);			
+			},
+			error : function(error) {
+				debugger;
+			}
+		});
+	}
 }
 
 AppMenu.prototype.updateUsersList = function(e){

@@ -18,21 +18,26 @@ LockView.prototype.initialize = function(){
 
 LockView.prototype.addHandlers = function(){
 	GenericView.prototype.addHandlers.call(this);
-	//$(this.node).find(".btn-back").click({ context:this },this.onBack );
+	$(this.node).find(".btn-cancel").click({ context:this },this.onCancel );
+	$(this.node).find(".btn-confirm").click({ context:this },this.onConfirm );
 }
 
-/*
-ConfirmationFormView.prototype.onBack = function(e){
+
+LockView.prototype.onCancel = function(e){
 	e.stopImmediatePropagation();
 	var self = e.data.context;
-	clearTimeout(self.timerGoToNextView);
-	$(self).trigger({ type:MonkeymanGlobals.GO_TO_NEXT_VIEW,view:Globals.REGISTRATION_FORM_VIEW });
+	$(self).trigger({ type:Globals.RESPONSE_LOCK_VIEW,response:0 });
+	self.destroy();
 }
 
-ConfirmationFormView.prototype.onCompleteTimerGoToNextView = function(e){
-	e.context.goToNextView();
+LockView.prototype.onConfirm = function(e){
+	e.stopImmediatePropagation();
+	e.stopImmediatePropagation();
+	var self = e.data.context;
+	if($(self.node).find("#input-password").val()=="998877"){
+		$(self).trigger({ type:Globals.RESPONSE_LOCK_VIEW,response:1 });
+		self.destroy();
+	}else{
+		Utils.showErrorMessage("Clave incorrecta");
+	}
 }
-
-ConfirmationFormView.prototype.goToNextView = function(){
-	$(this).trigger({ type:MonkeymanGlobals.GO_TO_NEXT_VIEW,view:Globals.REGISTRATION_FORM_VIEW });	
-}*/

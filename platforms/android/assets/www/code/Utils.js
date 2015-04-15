@@ -1,15 +1,16 @@
 var Utils = {
 	appName : "Registracion Disney",
-	appVersion : "1.0.8",
+	appVersion : "1.0.10",
 	setMain : function(instance) {
 		this.mainInstance = instance;
 	},
 	getMain : function() {
 		return this.mainInstance;
 	},
-	getServices : function(){
-		var url = "";
-		return {}
+	getServer : function(){
+		//var server = "";
+		var server = "http://deaene.com.ar/apps/RegistracionTomorrowland/";
+		return server;
 	},
 	showMessage : function(text) {
 		this.getOverlay();
