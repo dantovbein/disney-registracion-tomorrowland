@@ -93,27 +93,34 @@ RegistrationFormView.prototype.validateData = function(data){
 
 RegistrationFormView.prototype.getData = function(){
 	return {
-		"name" : $(this.node).find("#input-registration-form-name").val(),
-		"lastName" : $(this.node).find("#input-registration-form-last-name").val(),
-		"birhDate" : $(this.node).find("#input-registration-form-birth-date").val(),
-		"gender" : this.genderList.getState(),
-		"confirmDisneyNews" : this.disneyNewsCheckbox.getState(),
-		"confirmLegals" : this.legalsCheckbox.getState()
+		"userName" : $(this.node).find("#input-registration-form-name").val(),
+		"userLastName" : $(this.node).find("#input-registration-form-last-name").val(),
+		"userBirhDate" : $(this.node).find("#input-registration-form-birth-date").val(),
+		"userGender" : this.genderList.getState(),
+		"userConfirmDisneyNews" : this.disneyNewsCheckbox.getState(),
+		"userConfirmLegals" : this.legalsCheckbox.getState()
 	}
 }
 
 RegistrationFormView.prototype.saveData = function(data) {
-	Utils.getMain().usersDataBase.insert("users",{  "USER_NAME" : data.name,
-													"USER_LAST_NAME" : data.lastName,
-													"USER_BIRTH_DATE" : data.birhDate,
-													"USER_GENDER" : data.gender,
-													"USER_CONNECTED_DISNEY" : data.confirmDisneyNews,
-													"USER_CONFIRM_LEGALS" : data.confirmLegals
+	Utils.getMain().usersDataBase.insert("users",{  "USER_TOMORROWLAND_NAME" : data.userName,
+													"USER_TOMORROWLAND_LAST_NAME" : data.userLastName,
+													"USER_TOMORROWLAND_BIRTH_DATE" : data.userBirhDate,
+													"USER_TOMORROWLAND_GENDER" : data.userGender,
+													"USER_TOMORROWLAND_CONNECTED_DISNEY" : data.userConfirmDisneyNews,
+													"USER_TOMORROWLAND_CONFIRM_LEGALS" : data.userConfirmLegals,
+													"USER_TOMORROWLAND_CREATED" : parseFloat(new Date().getFullYear()) + "-" + parseFloat(new Date().getMonth()+1) + "-" + parseFloat(new Date().getDate())
 												});
 	Utils.getMain().usersDataBase.commit();
-	this.reset();	
+	Utils.showMessage("La informacion se guardo correctamente");
+	
+	setTimeout(function(e){
+		$(e.context).trigger({ type:MonkeymanGlobals.GO_TO_NEXT_VIEW,view:Globals.CONFIRMATION_FORM_VIEW });
+		e.context.clean();
+	},2600,{ context:this });
+	//this.clean();	
 
-	$.ajax({
+	/*$.ajax({
 		context : this,
 		async : false,
 		url : "service/overwriteUserFile.php",
@@ -135,18 +142,17 @@ RegistrationFormView.prototype.saveData = function(data) {
 		error : function(error) {
 			debugger;
 		}
-	});
+	});*/
 	
 	
 }
 
 
-RegistrationFormView.prototype.reset = function() {
-	GenericView.prototype.reset.call(this);
+RegistrationFormView.prototype.clean = function() {
 	$(this.node).find("#input-registration-form-name").val("");
 	$(this.node).find("#input-registration-form-last-name").val("");
 	$(this.node).find("#input-registration-form-birth-date").val("");
 	this.genderList.setState("");
-	this.disneyNewsCheckbox.setState(0);
+	this.disneyNewsCheckbox.setState(1);
 	this.legalsCheckbox.setState(0);
 }

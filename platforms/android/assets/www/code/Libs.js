@@ -23,6 +23,7 @@ Libs.prototype.getFiles = function(_lib_) {
 				"css/registrationFormView.css",
 				"css/confirmationFormView.css",
 				"css/legalsView.css",
+				"css/lockView.css",
 				"code/monkeyman/core/oop.js",
 				"code/monkeyman/core/Snippet.js",
 				"code/monkeyman/core/Monkeyman.js",
@@ -40,7 +41,8 @@ Libs.prototype.getFiles = function(_lib_) {
 				"code/views/AppMenu.js",
 				"code/views/RegistrationFormView.js",
 				"code/views/ConfirmationFormView.js",
-				"code/views/LegalsView.js"
+				"code/views/LegalsView.js",
+				"code/views/LockView.js"
 			]
 		}
 	);

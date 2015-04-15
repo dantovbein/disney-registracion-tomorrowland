@@ -94,6 +94,10 @@ a {
 	background-color: rgba(0,0,0,1);
 }
 
+.loading-app-message {
+	background-color: rgba(0,0,0,1);
+}
+
 .error-message {
 	background-color: red;
 }
@@ -104,7 +108,7 @@ a {
 	text-align: center;
 }
 
-.index-logo,.app-message,.error-message {
+.index-logo,.app-message,.error-message,.loading-app-message {
 	position: fixed;
 	top:0;
 	bottom: 0;

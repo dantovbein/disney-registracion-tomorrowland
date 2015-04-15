@@ -34,7 +34,7 @@ App.prototype.showAppMenu = function(e){
 App.prototype.createDataBase = function() {
 	this.usersDataBase = new localStorageDB("usersDataBase", localStorage);
 	if(this.usersDataBase.isNew()) {
-		this.usersDataBase.createTable("users",["USER_NAME","USER_LAST_NAME","USER_BIRTH_DATE","USER_GENDER","USER_CONNECTED_DISNEY","USER_CONFIRM_LEGALS"]);
+		this.usersDataBase.createTable("users",["USER_TOMORROWLAND_NAME","USER_TOMORROWLAND_LAST_NAME","USER_TOMORROWLAND_BIRTH_DATE","USER_TOMORROWLAND_GENDER","USER_TOMORROWLAND_CONNECTED_DISNEY","USER_TOMORROWLAND_CONFIRM_LEGALS","USER_TOMORROWLAND_CREATED"]);
 		this.usersDataBase.commit();
 	} else {
 		// Existe la base de datos

@@ -23,6 +23,10 @@ var Utils = {
 			e.context.removeOverlay();
 		},2000,{ context:this });
 	},
+	showMessageLoading : function(text) {
+		this.getOverlay();
+		$("body").append("<div class='app-message loading-app-message'><span class='message-desc'>" + text + "</span></div>");
+	},
 	showErrorMessage : function(text) {
 		this.getOverlay();
 		$("body").append("<div class='error-message'><span class='message-desc'>" + text + "</span></div>");
@@ -37,6 +41,7 @@ var Utils = {
 	},
 	removeMessage : function(){
 		if($(".app-message").length > 0) $(".app-message").remove();
+		this.removeOverlay();
 	},
 	removeUserData : function() {
 		if(this.getMain().usersDataBase) {

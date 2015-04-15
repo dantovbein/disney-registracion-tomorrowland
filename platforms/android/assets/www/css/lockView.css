@@ -1,0 +1,37 @@
+#lock-view {
+	background-color: rgba(0,0,0,.85);
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#input-password {
+	width: 60%;
+	padding: 1rem 0 1rem 1rem;
+	margin: 14% 0 12rem 0;
+	font-size: 1.8rem;
+}
+
+
+#lock-view .lock-view-nav {
+	display: inline-block;
+	width: 100%;
+	float: left;
+}
+
+#lock-view .lock-view-nav .lock-view-nav-list {
+	display: inline-block;
+}
+
+#lock-view .lock-view-nav .lock-view-nav-list .lock-view-nav-item {
+	float: left;
+	margin: 0 1rem 0 0;
+}
+
+#lock-view .lock-view-nav .lock-view-nav-list .lock-view-nav-item:last-child{
+	margin-right: 0;
+}
+
+#lock-view .lock-view-nav .lock-view-nav-list .lock-view-nav-item .btn span {
+	font-size: 1.5rem;
+}

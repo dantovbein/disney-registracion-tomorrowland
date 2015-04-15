@@ -1,26 +1,27 @@
-function ConfirmationFormView(config){
+function LockView(config){
 	GenericView.call(this,config);
 }
 
-inheritPrototype(ConfirmationFormView,GenericView);
+inheritPrototype(LockView,GenericView);
 
-ConfirmationFormView.prototype.constructor = ConfirmationFormView;
+LockView.prototype.constructor = LockView;
 
-ConfirmationFormView.prototype.initializeParameters = function(){
+LockView.prototype.initializeParameters = function(){
 	GenericView.prototype.initializeParameters.call(this);
-	this.path = "views/confirmationFormView.html";
+	this.path = "views/lockView.html";
 }
 
-ConfirmationFormView.prototype.initialize = function(){
+LockView.prototype.initialize = function(){
 	GenericView.prototype.initialize.call(this);
 	this.timerGoToNextView = setTimeout(this.onCompleteTimerGoToNextView,1000*10,{context:this});
 }
 
-ConfirmationFormView.prototype.addHandlers = function(){
+LockView.prototype.addHandlers = function(){
 	GenericView.prototype.addHandlers.call(this);
-	$(this.node).find(".btn-back").click({ context:this },this.onBack );
+	//$(this.node).find(".btn-back").click({ context:this },this.onBack );
 }
 
+/*
 ConfirmationFormView.prototype.onBack = function(e){
 	e.stopImmediatePropagation();
 	var self = e.data.context;
@@ -34,5 +35,4 @@ ConfirmationFormView.prototype.onCompleteTimerGoToNextView = function(e){
 
 ConfirmationFormView.prototype.goToNextView = function(){
 	$(this).trigger({ type:MonkeymanGlobals.GO_TO_NEXT_VIEW,view:Globals.REGISTRATION_FORM_VIEW });	
-}
-
+}*/

@@ -25,4 +25,4 @@ GenericView.prototype.destroy = function() {
 	$(this.node).remove();
 }
 
-GenericView.prototype.reset = function() { }
+GenericView.prototype.resetView = function() { }

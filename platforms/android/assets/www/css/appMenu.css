@@ -19,3 +19,16 @@
 #app-menu .app-menu-nav {
 	margin-top: 15rem;
 }
+
+#app-menu .app-menu-nav .app-menu-nav-item {
+	margin-bottom: 1rem;
+}
+
+#app-menu .users-message{
+} 
+
+#app-menu .total-users-amount{
+	display: inline-block;
+	font-size: 1.25rem;
+	margin: 0 0 0 .2rem;
+}
