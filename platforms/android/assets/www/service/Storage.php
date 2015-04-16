@@ -34,7 +34,7 @@ class Storage {
 		$this->connect();
 		$users = json_decode($data['users'],true);
 		foreach ($users as $user) {
-			$query = 'INSERT INTO users_disney_tomorrowland (USER_TOMORROWLAND_NAME,USER_TOMORROWLAND_LAST_NAME,USER_TOMORROWLAND_BIRTH_DATE,USER_TOMORROWLAND_GENDER,USER_TOMORROWLAND_CONNECTED_DISNEY,USER_TOMORROWLAND_CONFIRM_LEGALS,USER_TOMORROWLAND_CREATED) VALUES (' . '"' . $user['USER_TOMORROWLAND_NAME'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_LAST_NAME'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_BIRTH_DATE'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_GENDER'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_CONNECTED_DISNEY'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_CONFIRM_LEGALS'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_CREATED'] . '"' . ')';
+			$query = 'INSERT INTO users_disney_tomorrowland (USER_TOMORROWLAND_NAME,USER_TOMORROWLAND_LAST_NAME,USER_TOMORROWLAND_BIRTH_DATE,USER_TOMORROWLAND_GENDER,USER_TOMORROWLAND_CONFIRM_LEGALS,USER_TOMORROWLAND_CREATED) VALUES (' . '"' . $user['USER_TOMORROWLAND_NAME'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_LAST_NAME'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_BIRTH_DATE'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_GENDER'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_CONNECTED_DISNEY'] . '"' . ',' . '"' . $user['USER_TOMORROWLAND_CONFIRM_LEGALS'] . '"' . ')';
 			mysql_query($query);
 		}
 		$this->overwriteUsersFile($users);
@@ -50,7 +50,7 @@ class Storage {
 			$txt .= $user['USER_TOMORROWLAND_LAST_NAME'] . "|";
 			$txt .= $user['USER_TOMORROWLAND_BIRTH_DATE'] . "|";
 			$txt .= $user['USER_TOMORROWLAND_GENDER'] . "|";
-			$txt .= $user['USER_TOMORROWLAND_CONNECTED_DISNEY'] . "|";
+			//$txt .= $user['USER_TOMORROWLAND_CONNECTED_DISNEY'] . "|";
 			$txt .= $user['USER_TOMORROWLAND_CONFIRM_LEGALS'] . "|";
 			$txt .= $user['USER_TOMORROWLAND_CREATED'] . "|";
 			$txt .= "\n";

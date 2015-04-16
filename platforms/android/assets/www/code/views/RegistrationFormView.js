@@ -14,7 +14,7 @@ RegistrationFormView.prototype.initializeParameters = function(){
 RegistrationFormView.prototype.initialize = function(){
 	GenericView.prototype.initialize.call(this);
 	this.addGenderList();
-	this.addDisneyCheckbox();
+	//this.addDisneyCheckbox();
 	this.addLegalsCheckbox();
 }
 
@@ -68,23 +68,24 @@ RegistrationFormView.prototype.addLegalsCheckbox = function(){
 
 RegistrationFormView.prototype.validateData = function(data){
 	var isValid = true;
-	if(data.name == ""){
+	debugger;
+	if(data.userName == ""){
 		Utils.showErrorMessage("Falta completar el nombre");
 		return false;
 	}
-	if(data.lastName == ""){
+	if(data.userLastName == ""){
 		Utils.showErrorMessage("Falta completar el apellido");
 		return false;
 	}
-	if(data.birhDate == ""){
+	if(data.userBirhDate == ""){
 		Utils.showErrorMessage("Falta completar la fecha de nacimiento");
 		return false;
 	}
-	if(data.gender == ""){
+	if(data.userGender == ""){
 		Utils.showErrorMessage("Falta seleccionar el sexo");
 		return false;
 	}
-	if(data.confirmLegals == 0){
+	if(data.userConfirmLegals == 0){
 		Utils.showErrorMessage("No aceptaste las bases y condiciones");
 		return false;
 	}
@@ -97,7 +98,7 @@ RegistrationFormView.prototype.getData = function(){
 		"userLastName" : $(this.node).find("#input-registration-form-last-name").val(),
 		"userBirhDate" : $(this.node).find("#input-registration-form-birth-date").val(),
 		"userGender" : this.genderList.getState(),
-		"userConfirmDisneyNews" : this.disneyNewsCheckbox.getState(),
+		//"userConfirmDisneyNews" : this.disneyNewsCheckbox.getState(),
 		"userConfirmLegals" : this.legalsCheckbox.getState()
 	}
 }
@@ -107,7 +108,7 @@ RegistrationFormView.prototype.saveData = function(data) {
 													"USER_TOMORROWLAND_LAST_NAME" : data.userLastName,
 													"USER_TOMORROWLAND_BIRTH_DATE" : data.userBirhDate,
 													"USER_TOMORROWLAND_GENDER" : data.userGender,
-													"USER_TOMORROWLAND_CONNECTED_DISNEY" : data.userConfirmDisneyNews,
+													//"USER_TOMORROWLAND_CONNECTED_DISNEY" : data.userConfirmDisneyNews,
 													"USER_TOMORROWLAND_CONFIRM_LEGALS" : data.userConfirmLegals,
 													"USER_TOMORROWLAND_CREATED" : parseFloat(new Date().getFullYear()) + "-" + parseFloat(new Date().getMonth()+1) + "-" + parseFloat(new Date().getDate())
 												});
@@ -153,6 +154,6 @@ RegistrationFormView.prototype.clean = function() {
 	$(this.node).find("#input-registration-form-last-name").val("");
 	$(this.node).find("#input-registration-form-birth-date").val("");
 	this.genderList.setState("");
-	this.disneyNewsCheckbox.setState(1);
+	//this.disneyNewsCheckbox.setState(1);
 	this.legalsCheckbox.setState(0);
 }

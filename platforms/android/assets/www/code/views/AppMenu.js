@@ -90,12 +90,19 @@ AppMenu.prototype.synchronizeUsers = function(e){
 			data : { users : JSON.stringify(Utils.getMain().usersDataBase.query("users")) },
 			success : function(r){
 				debugger;
+				Utils.removeMessage();
+				Utils.showMessageLoading("Usuarios sincronizados correctamente");
 				setTimeout(function(){
 					Utils.removeMessage();
 				},1000);			
 			},
 			error : function(error) {
 				debugger;
+				Utils.removeMessage();
+				Utils.showMessageLoading("Ocurrió un error al sincronizar los usuarios");
+				setTimeout(function(){
+					Utils.removeMessage();
+				},1000);
 			}
 		});
 	}
