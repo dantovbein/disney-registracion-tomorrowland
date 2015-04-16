@@ -30,7 +30,7 @@ var Utils = {
 	},
 	showErrorMessage : function(text) {
 		this.getOverlay();
-		$("body").append("<div class='error-message'><span class='message-desc'>" + text + "</span></div>");
+		$("body").append("<div class='app-message error-message'><span class='message-desc'>" + text + "</span></div>");
 		setTimeout(function(e){
 			$(".error-message").animate({
 				"opacity":0
