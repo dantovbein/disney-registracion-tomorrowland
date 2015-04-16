@@ -27,7 +27,7 @@ RegistrationFormView.prototype.addHandlers = function(){
 
 RegistrationFormView.prototype.onCancel = function(e){
 	e.stopImmediatePropagation();
-	e.data.context.reset();
+	e.data.context.clean();
 }
 
 RegistrationFormView.prototype.onSave = function(e){
