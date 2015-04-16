@@ -8,7 +8,9 @@
 .registration-form {
 	/*width: 100%;*/
 	width:83%;	
-	/*margin-bottom: .8rem;*/
+	/*margin-bottom: 1.3rem;*/
+	margin-bottom: 0.05rem;
+
 	display: inline-block;
 }
 
