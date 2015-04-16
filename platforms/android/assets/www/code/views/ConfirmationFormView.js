@@ -13,7 +13,7 @@ ConfirmationFormView.prototype.initializeParameters = function(){
 
 ConfirmationFormView.prototype.initialize = function(){
 	GenericView.prototype.initialize.call(this);
-	this.timerGoToNextView = setTimeout(this.onCompleteTimerGoToNextView,1000*10,{context:this});
+	this.timerGoToNextView = setTimeout(this.onCompleteTimerGoToNextView,1000*60,{context:this});
 }
 
 ConfirmationFormView.prototype.addHandlers = function(){
