@@ -67,7 +67,7 @@ a {
 .index-logo {
 	/*width: 458px;
 	height: 521px;*/
-	margin:-2rem 0 0 14rem;  
+	margin:-3.1rem 0 0 14rem;  
 }
 
 .btn {
@@ -103,8 +103,8 @@ a {
 
 .app-message {
 	background-color: rgba(0,0,0,1);
-	top: 5.5rem;
-	left: 4.5rem;
+	top: 10rem;
+	left: 10rem;
 }
 
 .loading-app-message {
