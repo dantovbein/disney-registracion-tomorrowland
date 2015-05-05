@@ -74,7 +74,7 @@ RegistrationFormView.prototype.validateData = function(data){
 		return false;
 	}
 	if(data.userLastName == ""){
-		Utils.showErrorMessage("Falta completar el apellido");
+		Utils.showErrorMessage("Error en el campo de mail");
 		return false;
 	}
 	if(data.userBirhDate == ""){
